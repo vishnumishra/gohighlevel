@@ -15,6 +15,9 @@ module.exports = {
     let { amount, description } = req.body;
     try {
       let wallet = await Wallet.findOne({ where: { id } });
+      if(!wallet) {
+        return res.status(404).send({ message: 'wallet not found' });
+        }
       let balance = wallet.balance + amount;
       if (balance < 0) {
         throw flaverr('E_NOt_ENOUGHT_MONEY', new Error('You have not enough money, for this transaction'));
