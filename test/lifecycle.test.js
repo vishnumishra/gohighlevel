@@ -2,7 +2,7 @@ var sails = require('sails');
 
 // Before running any tests...
 before(function(done) {
-
+ 
   // Increase the Mocha timeout so that Sails has enough time to lift, even if you have a bunch of assets.
   this.timeout(5000);
 
