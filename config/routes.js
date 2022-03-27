@@ -21,7 +21,10 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
-
+  'POST /setup': { action: 'wallet/create' },
+  'GET /wallet/:id': { action: 'wallet/find' },
+  'POST /transact/:walletId': { action: 'transaction/create' },
+  'GET /transactions': { action: 'transaction/find' },
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
