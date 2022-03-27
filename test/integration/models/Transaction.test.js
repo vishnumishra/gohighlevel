@@ -27,7 +27,6 @@ describe('Transaction (model)', () => {
         it('should update a Transaction', async () => {
             let [transaction, ...rest] = await Transaction.find({});
             let [updatedTransact] = await Transaction.update({ id: transaction.id }).set({ amount: 10 }).fetch()
-            console.log("🚀 ~ file: Transaction.test.js ~ line 31 ~ it ~ updatedTransact", updatedTransact, updatedTransact.id)
             assert.ok(updatedTransact.id > 0);
             assert.equal(updatedTransact.amount, 10);
         })
